@@ -1,10 +1,10 @@
 # HSTS 1.0 Known Hosts database for GNU Wget.
 # Edit at your own risk.
 # <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
-update.code.visualstudio.com	0	1	1705781918	31536000
+update.code.visualstudio.com	0	1	1712939282	31536000
 api.mason-registry.dev	0	0	1704312791	63072000
 www.postgresql.org	0	0	1710255002	31536000
 packages.mozilla.org	0	0	1708902436	31536000
-www.dropbox.com	0	1	1711989133	31536000
-edge.dropboxstatic.com	0	1	1711989134	31536000
+www.dropbox.com	0	1	1714484766	31536000
+edge.dropboxstatic.com	0	1	1714484766	31536000
 github.com	0	1	1704507916	31536000

@@ -96,9 +96,6 @@ fi
 alias v=nvim
 alias fd=fdfind
 alias pn=pnpm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
@@ -131,3 +128,18 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # Python path 
 
 PATH=$PATH:$HOME/.local/bin
+
+PATH="$PATH":"$HOME/.local/scripts/"
+bindkey -s ^f "tmux-sessionizer\n"
+# Neovim 
+
+export PATH="$PATH:/bin/nvim-linux64/bin"
+
+# GO
+export PATH=$PATH:/usr/local/go/bin
+
+# fnm
+export PATH="/home/moises/.local/share/fnm:$PATH"
+eval "`fnm env`"
+# completions
+eval "$(fnm env --use-on-cd)"

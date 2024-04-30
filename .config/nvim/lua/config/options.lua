@@ -40,12 +40,12 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.opt.cursorline = false
 
 vim.opt.signcolumn = 'yes'
 
 vim.cmd 'autocmd BufRead,BufNewFile *.mdx set filetype=mdx'
-
+-- colors for floating windows
+--
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 

@@ -115,3 +115,7 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+. "$HOME/.cargo/env"
+
+# fnm
+eval "$(fnm env --use-on-cd)"
