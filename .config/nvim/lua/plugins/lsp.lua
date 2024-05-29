@@ -14,16 +14,42 @@ return {
       require('mason-lspconfig').setup_handlers {
         function(server_name) -- default handler (optional)
           require('lspconfig')[server_name].setup {
+            capabilities = capabilities,
           }
         end,
         ['jsonls'] = function()
           require('lspconfig').jsonls.setup {
+            capabilities = capabilities,
             settings = {
-              json = { schemas = require('schemastore').json.schemas(),
+              json = {
+                schemas = require('schemastore').json.schemas {
+                  extra = {
+                    {
+                      description = 'Shadcn UI components',
+                      fileMatch = { 'components.json' },
+                      name = 'components.json',
+                      url = 'https://ui.shadcn.com/schema.json',
+                    },
+                  }
+                },
                 validate = { enable = true },
+              }
+            }
+          }
+        end,
+        ['tailwindcss'] = function()
+          require 'lspconfig'.tailwindcss.setup({
+            settings = {
+              tailwindCSS = {
+                experimental = {
+                  classRegex = {
+                    { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                    { "cx\\(([^)]*)\\)",  "(?:'|\"|`)([^']*)(?:'|\"|`)" }
+                  },
+                },
               },
             },
-          }
+          })
         end,
         ['tsserver'] = function()
           require('lspconfig').tsserver.setup({
